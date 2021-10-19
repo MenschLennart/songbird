@@ -45,7 +45,7 @@ class AuthView extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 16.0),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          onPrimary: Colors.lightGreenAccent,
+          onPrimary: Theme.of(context).primaryColor,
           padding: const EdgeInsets.all(12),
           shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(
@@ -70,22 +70,14 @@ class AuthView extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Colors.black,
+      appBar: AppBar(),
       body: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisSize: MainAxisSize.max,
         children: [
-          Card(
-            color: Colors.white12,
-            elevation: 5,
-            margin: const EdgeInsets.all(20.0),
-            shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(
-                Radius.circular(24.0),
-              ),
-            ),
-            child: Container(
-              constraints: const BoxConstraints(maxWidth: 500),
+          Expanded(
+            child: Card(
               child: ListView(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:songbird/entities/artist.dart';
-import 'package:songbird/entities/genre.dart';
 import 'package:songbird/model/home_model.dart';
 
 class HomeView extends StatelessWidget {
@@ -12,7 +11,7 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Widget artistCard(Artist artist) {
+    Widget artistAvatar(Artist artist) {
       return CircleAvatar(
         maxRadius: 30,
         child: ClipOval(
@@ -28,7 +27,7 @@ class HomeView extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       padding: const EdgeInsets.all(24),
       itemBuilder: (context, index) {
-        return artistCard(artists[index]);
+        return artistAvatar(artists[index]);
       },
     );
 
@@ -58,8 +57,6 @@ class HomeView extends StatelessWidget {
         builder: (context, _) {
           return BottomNavigationBar(
             currentIndex: context.watch<HomeModel>().bottomBarTabIndex,
-            backgroundColor: Colors.black87,
-            elevation: 5,
             onTap: context.read<HomeModel>().setTabIndex,
             items: const [
               BottomNavigationBarItem(

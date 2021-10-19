@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:songbird/routes.dart';
+import 'package:songbird/theme.dart';
 import 'package:songbird/view/auth_view.dart';
 
 void main() {
@@ -14,10 +15,7 @@ class Songbird extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Songbird',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        brightness: Brightness.dark,
-      ),
+      theme: darkTheme,
       routes: Routes.routes,
       home: const AuthView(),
     );
