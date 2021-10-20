@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:songbird/view/artist_view.dart';
 import 'package:songbird/view/auth_view.dart';
 import 'package:songbird/view/home_view.dart';
 
 class Routes {
   static Map<String, WidgetBuilder> routes = {
-    'home': (context) => HomeView(),
-    'auth': (context) => const AuthView(),
+    HomeView.routeName: (context) => HomeView(),
+    ArtistView.routeName: (context) => const ArtistView(),
+    AuthView.routeName: (context) => const AuthView(),
   };
 }

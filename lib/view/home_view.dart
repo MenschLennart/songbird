@@ -5,6 +5,7 @@ import 'package:songbird/model/home_model.dart';
 
 class HomeView extends StatelessWidget {
   static String title = "Songbird";
+  static String routeName = "home";
 
   HomeView({Key? key}) : super(key: key);
   final List<Artist> artists = [];

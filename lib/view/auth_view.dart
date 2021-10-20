@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 class AuthView extends StatelessWidget {
+  static String routeName = "auth";
   const AuthView({Key? key}) : super(key: key);
 
   @override
