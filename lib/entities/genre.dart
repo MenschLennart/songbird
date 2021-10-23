@@ -1,15 +1,20 @@
-enum Genre {
-  pop,
-  hiphop,
-  electronic,
-}
+class Genre {
+  final String genreId;
+  final String type;
+  final String href;
+  final String name;
 
-extension GenreExtension on Genre {
-  static const genreMap = <Genre, String>{
-    Genre.pop: "Pop",
-    Genre.electronic: "Electronic",
-    Genre.hiphop: "Hip-Hop",
-  };
+  Genre(
+      {required this.genreId,
+      required this.type,
+      required this.href,
+      required this.name});
 
-  String get name => genreMap[this]!;
+  factory Genre.fromJson(Map<String, dynamic> json) {
+    return Genre(
+        genreId: json['id'],
+        type: json['type'],
+        href: json['href'],
+        name: json['attributes']['name']);
+  }
 }
