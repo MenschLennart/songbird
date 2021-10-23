@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:songbird/routes.dart';
 import 'package:songbird/service/apple_music_service.dart';
 import 'package:songbird/theme.dart';
-import 'package:songbird/view/auth_view.dart';
+import 'package:songbird/page/auth_page.dart';
 
 void main() {
   runApp(const Songbird());
@@ -25,7 +25,7 @@ class Songbird extends StatelessWidget {
       title: 'Songbird',
       theme: darkTheme,
       routes: Routes.routes,
-      home: const AuthView(),
+      home: const AuthPage(),
     );
   }
 }
